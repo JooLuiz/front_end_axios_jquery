@@ -12,9 +12,14 @@
   </head>
 
   <body>
-    <h1><a href="./main.html">Java Jersey APP</a></h1>
-    <a href="./usuarios/usuarios.html">Usuarios</a>
-    <a href="./materias/materias.html">Matérias</a>
+    <h1><a href="../main.html">Java Jersey APP</a></h1>
+    <a href="./materias.html">Matérias</a>
+
+    <form id="adicionarMateria">
+      <input type="text" name="descricao" placeholder="descricao" />
+      <input type="text" name="ativa" placeholder="ativa" />
+      <input type="submit" value="Cadastrar" />
+    </form>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>
@@ -23,5 +28,6 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <script src="adicionarMateria.js"></script>
   </body>
 </html>
