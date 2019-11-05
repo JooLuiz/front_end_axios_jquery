@@ -15,53 +15,54 @@
 
 <body>
     <div class="header-wrapper">
-      <h2>Java Jersey APP</h2>
-      <a href="../main.html" class="btn-header">Voltar</a>
-    </div>
+        <h2><a href="../main.html">Java Jersey APP</a></h2>
+        <a href="./adicionarUsuario.html" class="btn-header">Adicionar</a>
+      </div>
       
-    <div id="editUsuarioModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Editar Usuário</h2>
-        </div>
-        <div class="modal-body form">
-          <form id="editarUsuario">
-            <div class="half-form">
-              <div class="form-groups">
-                <input type="text" name="nome" placeholder="Nome" />
-                <label for="nome">Nome</label>
-              </div>
-              <div class="form-groups">
-                <input type="text" name="sobrenome" placeholder="Sobrenome" />
-                <label for="sobrenome">SobreNome</label>
-              </div>
-              <div class="form-groups">
-                <input type="text" name="usuario" placeholder="Usuario" />
-                <label for="usuario">Usuário</label>
-              </div>
-              <div class="form-groups">
-                <input type="text" name="senha" placeholder="Senha" />
-                <label for="senha">Senha</label>
-              </div>
+  <div id="editUsuarioModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Editar Usuário</h2>
+      </div>
+      <div class="modal-body form">
+        <form id="editarUsuario">
+          <div class="half-form">
+            <div class="form-groups">
+              <input type="text" name="nome" placeholder="Nome" />
+              <label for="nome">Nome</label>
             </div>
-            <div class="half-form">
-              <div class="form-groups">
-                <input type="number" name="idade" placeholder="Idade" />
-                <label for="idade">Idade</label>
-              </div>
-              <div class="form-groups">
-                <input type="number" name="id" placeholder="id" hidden />
-                <button id="doEdit">Editar</button>
-              </div>
+            <div class="form-groups">
+              <input type="text" name="sobrenome" placeholder="Sobrenome" />
+              <label for="sobrenome">SobreNome</label>
+            </div>
+            <div class="form-groups">
+              <input type="text" name="usuario" placeholder="Usuario" />
+              <label for="usuario">Usuário</label>
+            </div>
+            <div class="form-groups">
+              <input type="text" name="senha" placeholder="Senha" />
+              <label for="senha">Senha</label>
+            </div>
+          </div>
+          <div class="half-form">
+            <div class="form-groups">
+              <input type="number" name="idade" placeholder="Idade" />
+              <label for="idade">Idade</label>
+            </div>
+            <div class="form-groups">
+              <input type="number" name="id" placeholder="id" hidden />
+              <button id="doEditUsuario">Editar</button>
 
             </div>
-          </form>
-        </div>
-        
+
+          </div>
+        </form>
       </div>
+      
     </div>
+  </div>
 
   <div class="table-wrapper">
     <table id="listaUsuarios">
