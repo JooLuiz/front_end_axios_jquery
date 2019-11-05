@@ -1,0 +1,26 @@
+.table-wrapper{
+    padding: 30px 40px;
+    margin: auto;
+}
+
+
+table { 
+    border-collapse: collapse; 
+    width: -webkit-fill-available;
+} 
+tr:nth-child(even) {
+    background: #158cba30
+}
+
+th { 
+    background-color:#158cba; 
+    Color:white; 
+} 
+th, td { 
+    width:150px; 
+    text-align:center; 
+    border:1px solid black; 
+    padding:5px 
+  
+} 
+

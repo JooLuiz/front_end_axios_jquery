@@ -68,7 +68,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-#doEditUsuario{
+#doEdit{
     float: right;
     width: 50%;
     height: 50%;
@@ -77,13 +77,20 @@
     margin-top: 30px;
 }
 
-#doEditUsuario:active {
+#doEdit:active {
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
 }
 
-#doEditUsuario:focus{
+#doEdit:focus{
     outline: none;
 }
 .form > #adicionarUsuario{
     margin: 25px;
+}
+#doEditAdd{
+    float: right;
+    width: 25%;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 30px;
 }
