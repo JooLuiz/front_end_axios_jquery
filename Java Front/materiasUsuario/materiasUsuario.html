@@ -1,144 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Java Jersey APP</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
-    />
-    <style>
-      /* The Modal (background) */
-      .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java Jersey APP</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../styles/form.css">
+  <link rel="stylesheet" href="../../styles/modal.css">
+  <style>
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Modal Header */
+    .modal-header {
+      padding: 2px 16px;
+      background-color: "grey";
+      color: white;
+    }
+
+    /* Modal Body */
+    .modal-body {
+      padding: 2px 16px;
+    }
+
+    /* Modal Footer */
+    .modal-footer {
+      padding: 2px 16px;
+      background-color: "grey";
+      color: white;
+    }
+
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      animation-name: animatetop;
+      animation-duration: 0.4s;
+    }
+
+    /* Add Animation */
+    @keyframes animatetop {
+      from {
+        top: -300px;
+        opacity: 0;
+      }
+
+      to {
         top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0); /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        opacity: 1;
       }
+    }
+  </style>
+</head>
 
-      /* The Close Button */
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      /* Modal Header */
-      .modal-header {
-        padding: 2px 16px;
-        background-color: "grey";
-        color: white;
-      }
-
-      /* Modal Body */
-      .modal-body {
-        padding: 2px 16px;
-      }
-
-      /* Modal Footer */
-      .modal-footer {
-        padding: 2px 16px;
-        background-color: "grey";
-        color: white;
-      }
-
-      /* Modal Content */
-      .modal-content {
-        position: relative;
-        background-color: #fefefe;
-        margin: auto;
-        padding: 0;
-        border: 1px solid #888;
-        width: 80%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        animation-name: animatetop;
-        animation-duration: 0.4s;
-      }
-
-      /* Add Animation */
-      @keyframes animatetop {
-        from {
-          top: -300px;
-          opacity: 0;
-        }
-        to {
-          top: 0;
-          opacity: 1;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <h1><a href="../main.html">Java Jersey APP</a></h1>
-    <a href="./adicionarMateriaUsuario.html">Adicionar</a>
-    <div id="editMateriaUsuarioModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Editar Matéria-Usuario</h2>
-        </div>
-        <div class="modal-body">
-          <form id="editarMateriaUsuario">
-            <input type="number" name="id" placeholder="id" hidden />
-            <input type="text" name="ano" placeholder="ano" />
-            <input type="text" name="situacao" placeholder="situacao" />
-          </form>
-          <select
-            name="materiasList"
-            id="materiasList"
-            form="editarMateriaUsuario"
-          >
-          </select>
-          <select
-            name="usuariosList"
-            id="usuariosList"
-            form="editarMateriaUsuario"
-          >
-          </select>
-        </div>
-        <div class="modal-footer">
-          <h3 id="doEditMateriaUsuario">Editar</h3>
-        </div>
+<body>
+  <h1><a href="../main.html">Java Jersey APP</a></h1>
+  <a href="./adicionarMateriaUsuario.html">Adicionar</a>
+  <div id="editMateriaUsuarioModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Editar Matéria-Usuario</h2>
+      </div>
+      <div class="modal-body">
+        <form id="editarMateriaUsuario">
+          <input type="number" name="id" placeholder="id" hidden />
+          <input type="text" name="ano" placeholder="ano" />
+          <input type="text" name="situacao" placeholder="situacao" />
+        </form>
+        <select name="materiasList" id="materiasList" form="editarMateriaUsuario">
+        </select>
+        <select name="usuariosList" id="usuariosList" form="editarMateriaUsuario">
+        </select>
+      </div>
+      <div class="modal-footer">
+        <h3 id="doEditMateriaUsuario">Editar</h3>
       </div>
     </div>
+  </div>
 
-    <table id="listaMateriasUsuario">
-      <thead id="listaMateriasUsuarioHeader">
-        <th>Ano</th>
-        <th>Situacao</th>
-        <th>Usuario</th>
-        <th>Materia</th>
-        <th></th>
-        <th></th>
-      </thead>
-      <tbody id="listaMateriasUsuarioBody"></tbody>
-    </table>
+  <table id="listaMateriasUsuario">
+    <thead id="listaMateriasUsuarioHeader">
+      <th>Ano</th>
+      <th>Situacao</th>
+      <th>Usuario</th>
+      <th>Materia</th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody id="listaMateriasUsuarioBody"></tbody>
+  </table>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="materiasUsuario.js"></script>
-  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="materiasUsuario.js"></script>
+</body>
+
 </html>
