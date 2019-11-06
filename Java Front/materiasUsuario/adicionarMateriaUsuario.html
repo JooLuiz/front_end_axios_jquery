@@ -9,21 +9,43 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css" />
   <link rel="stylesheet" href="../../styles/form.css">
   <link rel="stylesheet" href="../../styles/modal.css">
+  <link rel="stylesheet" href="../../styles/header.css">
 </head>
 
 <body>
-  <h1><a href="../main.html">Java Jersey APP</a></h1>
-  <a href="./materiasUsuario.html">Matérias</a>
+    <div class="header-wrapper">
+      <h2><a href="../main.html">Java Jersey APP</a></h2>
+      <a href="./materiasUsuario.html" class="btn-header">Voltar</a>
+    </div>
+    
 
-  <form id="adicionarMateriaUsuario">
-    <input type="number" name="id" placeholder="id" hidden />
-    <input type="text" name="ano" placeholder="ano" />
-    <input type="text" name="situacao" placeholder="situacao" />
-  </form>
-  <select name="materiasList" id="materiasList" form="adicionarMateriaUsuario">
-  </select>
-  <select name="usuariosList" id="usuariosList" form="adicionarMateriaUsuario">
-  </select>
+    <div class="form">
+      <form id="adicionarMateriaUsuario" class="add-wrapper">
+        <div class="half-form">
+            <div class="form-groups">
+              <input type="text" name="ano" placeholder="ano" />
+            </div>
+            <div class="form-groups">
+              <input type="text" name="situacao" placeholder="situacao" />
+            </div>
+            <div class="form-groups">
+              <select name="materiasList" id="materiasList" form="adicionarMateriaUsuario">
+                  <option value="volvo">Volvo</option>
+                  <option value="volvo">Volvo</option>
+                  <option value="volvo">Volvo</option>
+              </select>
+            </div>
+            <div class="form-groups">
+              <select name="usuariosList" id="usuariosList" form="adicionarMateriaUsuario">
+                  <option value="volvo">Volvo</option>
+                  <option value="volvo">Volvo</option>
+                  <option value="volvo">Volvo</option>
+              </select>
+              <input type="number" name="id" placeholder="id" hidden /> 
+            </div>
+          </div>
+        </form>
+    </div>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>

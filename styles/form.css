@@ -84,13 +84,25 @@
 #doEdit:focus{
     outline: none;
 }
-.form > #adicionarUsuario{
+.form > .add-wrapper{
     margin: 25px;
 }
-#doEditAdd{
+.half-form > .form-groups > .btn-form-add{
     float: right;
     width: 25%;
     border: 0;
     border-radius: 5px;
     margin-top: 30px;
+}
+
+.form select{
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    border-bottom: 3px solid #191919;
+    width: 100%;
+    transition: all 0.3s;
 }
