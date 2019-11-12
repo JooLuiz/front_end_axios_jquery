@@ -1,0 +1,17 @@
+.header-wrapper{
+    padding: 0px 40px;
+}
+
+.header-wrapper h2{
+    padding-bottom: 15px;
+
+}
+
+.header-wrapper > .btn-header{
+    padding: 10px 15px;
+    border-radius: 2px;
+    outline: none;
+    transition: 0.3s;
+    background-color: #dddddd;
+    color: black;    
+}
