@@ -17,7 +17,7 @@
 .form input:focus{
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-    border-bottom: 3px solid  #ce3535;
+    border-bottom: 3px solid  #158cba;
 }
 
 .form textarea{
@@ -37,7 +37,7 @@
 .form textarea:focus{
     outline: none;
     box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.1);
-    border: 3px solid  #ce3535;
+    border: 3px solid  #158cba;
 }
 
 .form input::-webkit-input-placeholder, .form textarea::-webkit-input-placeholder{
@@ -53,7 +53,7 @@
     margin-left: 2rem;
     margin-top: 0.7rem;
     transition: all 0.3s;
-    color: #ce3535;
+    color: #158cba;
     visibility: hidden;
     opacity: 0;
 }
@@ -64,11 +64,11 @@
     transform: translateY(1rem);
 }
 
-.form > #editarUsuario > .half-form{
+.form > .formEditar > .half-form{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-#doEdit{
+.form-groups > .doEdit{
     float: right;
     width: 50%;
     height: 50%;
@@ -77,11 +77,11 @@
     margin-top: 30px;
 }
 
-#doEdit:active {
+.form-groups > .doEdit:active {
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
 }
 
-#doEdit:focus{
+.form-groups > .doEdit:focus{
     outline: none;
 }
 .form > .add-wrapper{

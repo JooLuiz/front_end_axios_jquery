@@ -7,11 +7,25 @@
 
 }
 
-.header-wrapper > .btn-header{
+.header-wrapper >  .header-button-group > .btn-header{
     padding: 10px 15px;
     border-radius: 2px;
     outline: none;
     transition: 0.3s;
     background-color: #dddddd;
     color: black;    
+}
+
+.header-wrapper > .header{
+    background-color: #158cba;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.header-wrapper > .header a{
+    color: white;
+}
+
+.header-wrapper > .header-button-group{
+    margin-top: 20px;
 }
