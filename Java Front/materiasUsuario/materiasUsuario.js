@@ -61,12 +61,12 @@ $(document).ready(function() {
     let id = $("input[name=id]").val();
     let ano = $("input[name=ano]").val();
     let situacao = $("input[name=situacao]").val();
-    let materia = $("#materiasList").val();
+    let materiaId = $("#materiasList").val();
     let usuario = $("#usuariosList").val();
     var materiaUsuario = {
       ano: ano,
       situacao: situacao,
-      materia: materia,
+      materia: { id: materiaId },
       usuario: usuario
     };
     doEditMateriaUsuario(materiaUsuario, id);

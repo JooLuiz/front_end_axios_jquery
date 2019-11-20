@@ -9,27 +9,44 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../../styles/form.css" />
+    <link rel="stylesheet" href="../../styles/modal.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/footer.css" />
   </head>
 
   <body>
     <div class="header-wrapper">
       <h2 class="header"><a href="../main.html">Lufez Inc</a></h2>
       <div class="header-button-group">
-        <a href="./usuarios/usuarios.html" class="btn-header">Usuarios</a>
-        <a href="./materias/materias.html" class="btn-header">Matérias</a>
-        <a href="./materiasUsuario/materiasUsuario.html" class="btn-header"
-          >Matérias - Usuário</a
-        >
-        <a href="./aulas/aulas.html" class="btn-header">Aulas</a>
-        <a href="./conteudos/conteudos.html" class="btn-header">Conteudos</a>
-        <a href="./exercicios/exercicios.html" class="btn-header">Exercicios</a>
-        <a href="./respostas/respostas.html" class="btn-header">Respostas</a>
+        <a href="./conteudos.html" class="btn-header">Voltar</a>
       </div>
     </div>
 
-    <div class="footer-wrapper footer-wrapper-main">
+    <div class="form">
+      <form id="adicionarConteudo" class="add-wrapper">
+        <div class="half-form">
+          <div class="form-groups">
+            <input type="text" name="conteudo" placeholder="conteudo" />
+          </div>
+          <div class="form-groups">
+            <select name="aulasList" id="aulasList" form="adicionarConteudo">
+            </select>
+          </div>
+          <div class="form-groups">
+            <input
+              id="adicionarConteudo"
+              class="btn-form-add"
+              type="submit"
+              value="Salvar"
+            />
+            <input type="number" name="id" placeholder="id" hidden />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="footer-wrapper">
       <div class="footer-info-group">
         <ul class="footer-list">
           <li>Copyright © 2019 Lufez Inc. Todos os direitos reservados</li>
@@ -38,7 +55,6 @@
         </ul>
       </div>
     </div>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>
     <script
@@ -46,5 +62,6 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <script src="adicionarConteudo.js"></script>
   </body>
 </html>
