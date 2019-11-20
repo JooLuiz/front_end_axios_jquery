@@ -19,6 +19,7 @@ $(document).ready(function() {
           ")'>Excluir</td></tr>"
       );
     });
+    $("#listaExercicios").DataTable();
   });
 
   axios.get("http://localhost:8080/myapp/conteudos").then(function(res) {

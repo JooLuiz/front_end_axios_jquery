@@ -1,54 +1,43 @@
-.footer-wrapper{
-    padding: 0px 40px;
-    margin-top: 78px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-
+.footer-wrapper {
+  padding: 0px 40px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
-.footer-wrapper-main{
-    padding: 0px 40px;
-    margin-top: 78px;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.footer-wrapper-main {
+  padding: 0px 40px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
-.footer-wrapper h2{
-    padding-bottom: 15px;
-
+.footer-wrapper h2 {
+  padding-bottom: 15px;
 }
 
-.footer-wrapper >  .footer-info-group > .btn-footer{
-    padding: 10px 15px;
-    border-radius: 2px;
-    outline: none;
-    transition: 0.3s;
-    background-color: #dddddd;
-    color: black;    
+.footer-wrapper > .footer-info-group > .btn-footer {
+  padding: 10px 15px;
+  border-radius: 2px;
+  outline: none;
+  transition: 0.3s;
+  background-color: #dddddd;
+  color: black;
 }
 
-.footer-wrapper > .footer-info-group{
-    background-color: #158cba;
-    /* text-align: center;
-    padding-top: 10px; */
+.footer-wrapper > .footer-info-group {
+  background-color: #158cba;
 }
 
-.footer-wrapper > .footer a{
-    color: white;
+.footer-wrapper > .footer a {
+  color: white;
 }
 
-.footer-wrapper > .footer-info-group{
-    margin-top: 20px;
-}
-
-.footer-wrapper > .footer-info-group > .footer-list{ 
-    margin-top: 0;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0px;
-    margin: 33px 80px;
-    color: white;
-    list-style-type: none;
+.footer-wrapper > .footer-info-group > .footer-list {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  margin-right: 33px;
+  margin-left: 33px;
+  color: white;
+  list-style-type: none;
 }

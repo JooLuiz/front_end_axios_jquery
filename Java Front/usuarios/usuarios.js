@@ -14,9 +14,6 @@ $(document).ready(function() {
           "<td>" +
           item.usuario +
           "</td>" +
-          "<td>" +
-          item.senha +
-          "</td>" +
           "<td><a href='javascript:editUser(" +
           item.id +
           ")'>Editar</td>" +
@@ -25,6 +22,7 @@ $(document).ready(function() {
           ")'>Excluir</td></tr>"
       );
     });
+    $("#listaUsuarios").DataTable();
   });
 
   var modal = document.getElementById("editUsuarioModal");

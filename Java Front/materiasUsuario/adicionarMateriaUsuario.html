@@ -1,67 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lufez Inc</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../../styles/form.css" />
+    <link rel="stylesheet" href="../../styles/modal.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/footer.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lufez Inc</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css" />
-  <link rel="stylesheet" href="../../styles/form.css">
-  <link rel="stylesheet" href="../../styles/modal.css">
-  <link rel="stylesheet" href="../../styles/header.css">
-  <link rel="stylesheet" href="../../styles/footer.css">
-</head>
-
-<body>
+  <body>
     <div class="header-wrapper">
       <h2 class="header"><a href="../main.html">Lufez Inc</a></h2>
       <div class="header-button-group">
         <a href="./materiasUsuario.html" class="btn-header">Voltar</a>
       </div>
     </div>
-    
 
     <div class="form">
       <form id="adicionarMateriaUsuario" class="add-wrapper">
         <div class="half-form">
-            <div class="form-groups">
-              <input type="text" name="ano" placeholder="ano" />
-            </div>
-            <div class="form-groups">
-              <input type="text" name="situacao" placeholder="situacao" />
-            </div>
-            <div class="form-groups">
-              <select name="materiasList" id="materiasList" form="adicionarMateriaUsuario">
-              </select>
-            </div>
-            <div class="form-groups">
-              <select name="usuariosList" id="usuariosList" form="adicionarMateriaUsuario">
-              </select>
-              <input type="number" name="id" placeholder="id" hidden /> 
-            </div>
-            <div class="form-groups">
-              <input id="adicionarMateriaUsuario" class="btn-form-add" type="submit" value="Salvar" />
-              <input type="number" name="id" placeholder="id" hidden />
-            </div>
+          <div class="form-groups">
+            <input type="text" name="ano" placeholder="ano" />
           </div>
-        </form>
-    </div>
-      
-    <div class="footer-wrapper">
-        <div class="footer-info-group">
-          <ul class="footer-list">
-            <li>Copyright © 2019 Lufez Inc. Todos os direitos reservados</li>
-            <li>|</li>
-            <li>São Paulo - (11) 9898 - 9800</li>
-          </ul>
+          <div class="form-groups">
+            <input type="text" name="situacao" placeholder="situacao" />
+          </div>
+          <div class="form-groups">
+            <select
+              name="materiasList"
+              id="materiasList"
+              form="adicionarMateriaUsuario"
+            >
+            </select>
+          </div>
+          <div class="form-groups">
+            <select
+              name="usuariosList"
+              id="usuariosList"
+              form="adicionarMateriaUsuario"
+            >
+            </select>
+            <input type="number" name="id" placeholder="id" hidden />
+          </div>
+          <div class="form-groups">
+              <input
+              id="adicionarMateriasUsuario"
+              class="btn btn-info"
+              type="submit"
+              value="Salvar"
+              ></input>
+            <input type="number" name="id" placeholder="id" hidden />
+          </div>
         </div>
-      </div>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="adicionarMateriaUsuario.js"></script>
-</body>
+      </form>
+    </div>
 
+    <div class="footer-wrapper">
+      <div class="footer-info-group">
+        <ul class="footer-list">
+          <li>Copyright © 2019 Lufez Inc. Todos os direitos reservados</li>
+          <li>|</li>
+          <li>São Paulo - (11) 9898 - 9800</li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="adicionarMateriaUsuario.js"></script>
+  </body>
 </html>

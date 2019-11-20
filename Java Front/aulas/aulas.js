@@ -19,6 +19,7 @@ $(document).ready(function() {
           ")'>Excluir</td></tr>"
       );
     });
+    $("#listaAulas").DataTable();
   });
 
   axios.get("http://localhost:8080/myapp/materias").then(function(res) {

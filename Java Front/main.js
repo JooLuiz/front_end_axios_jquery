@@ -117,4 +117,9 @@ $(document).ready(function() {
       }
     });
   });
+
+  // Activate Carousel
+  $("#carouselIndex").carousel({
+    interval: 2000
+  });
 });
