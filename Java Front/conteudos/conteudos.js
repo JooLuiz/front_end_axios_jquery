@@ -1,23 +1,29 @@
 $(document).ready(function() {
-  axios.get("http://localhost:8080/myapp/conteudos").then(function(res) {
-    res.data.forEach(function(item) {
-      $("#listaConteudosBody").append(
-        "<tr><td>" +
-          item.conteudo +
-          "</td>" +
-          "<td>" +
-          item.aula.descricao +
-          "</td>" +
-          "<td><a href='javascript:editConteudo(" +
-          item.id +
-          ")'>Editar</td>" +
-          "<td><a href='javascript:deleteConteudo(" +
-          item.id +
-          ")'>Excluir</td></tr>"
-      );
+  $("#preloader").css("display", "block");
+  axios
+    .get("http://localhost:8080/myapp/conteudos")
+    .then(function(res) {
+      res.data.forEach(function(item) {
+        $("#listaConteudosBody").append(
+          "<tr><td>" +
+            item.conteudo +
+            "</td>" +
+            "<td>" +
+            item.aula.descricao +
+            "</td>" +
+            "<td><a href='javascript:editConteudo(" +
+            item.id +
+            ")'>Editar</td>" +
+            "<td><a href='javascript:deleteConteudo(" +
+            item.id +
+            ")'>Excluir</td></tr>"
+        );
+      });
+      $("#listaConteudos").DataTable();
+    })
+    .finally(function() {
+      $("#preloader").css("display", "none");
     });
-    $("#listaConteudos").DataTable();
-  });
 
   axios.get("http://localhost:8080/myapp/aulas").then(function(res) {
     res.data.forEach(function(item) {
@@ -57,6 +63,7 @@ $(document).ready(function() {
 });
 
 function doEditConteudo(conteudo, id) {
+  $("#preloader").css("display", "block");
   axios
     .put("http://localhost:8080/myapp/conteudos/conteudo/" + id, conteudo)
     .then(function(res) {
@@ -64,11 +71,12 @@ function doEditConteudo(conteudo, id) {
     })
     .finally(function() {
       location.reload();
+      $("#preloader").css("display", "none");
     });
 }
 
 function editConteudo(id) {
-  // Get the modal
+  $("#preloader").css("display", "block");
   axios
     .get("http://localhost:8080/myapp/conteudos/conteudo/" + id)
     .then(function(res) {
@@ -76,10 +84,14 @@ function editConteudo(id) {
       $("input[name=conteudo]").val(res.data.conteudo);
       var modal = document.getElementById("editConteudoModal");
       modal.style.display = "block";
+    })
+    .finally(function() {
+      $("#preloader").css("display", "none");
     });
 }
 
 function deleteConteudo(id) {
+  $("#preloader").css("display", "block");
   axios
     .delete("http://localhost:8080/myapp/conteudos/conteudo/" + id)
     .then(function(res) {
@@ -87,5 +99,6 @@ function deleteConteudo(id) {
     })
     .finally(function() {
       location.reload();
+      $("#preloader").css("display", "none");
     });
 }

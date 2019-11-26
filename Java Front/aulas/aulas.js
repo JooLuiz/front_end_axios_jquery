@@ -1,34 +1,40 @@
 $(document).ready(function() {
-  axios.get("http://localhost:8080/myapp/aulas").then(function(res) {
-    res.data.forEach(function(item) {
-      $("#listaAulasBody").append(
-        "<tr><td>" +
-          item.descricao +
-          "</td>" +
-          "<td>" +
-          item.situacao +
-          "</td>" +
-          "<td>" +
-          item.materia.descricao +
-          "</td>" +
-          "<td><a href='javascript:iniciarAula(" +
-          item.id +
-          ")'>Iniciar Aula/</td>" +
-          "<td><a href='javascript:finalizarAula(" +
-          item.id +
-          ")'>Concluir Aula</td>" +
-          "" +
-          "</td>" +
-          "<td><a href='javascript:editAula(" +
-          item.id +
-          ")'>Editar</td>" +
-          "<td><a href='javascript:deleteAula(" +
-          item.id +
-          ")'>Excluir</td></tr>"
-      );
+  $("#preloader").css("display", "block");
+  axios
+    .get("http://localhost:8080/myapp/aulas")
+    .then(function(res) {
+      res.data.forEach(function(item) {
+        $("#listaAulasBody").append(
+          "<tr><td>" +
+            item.descricao +
+            "</td>" +
+            "<td>" +
+            item.situacao +
+            "</td>" +
+            "<td>" +
+            item.materia.descricao +
+            "</td>" +
+            "<td><a href='javascript:iniciarAula(" +
+            item.id +
+            ")'>Iniciar Aula/</td>" +
+            "<td><a href='javascript:finalizarAula(" +
+            item.id +
+            ")'>Concluir Aula</td>" +
+            "" +
+            "</td>" +
+            "<td><a href='javascript:editAula(" +
+            item.id +
+            ")'>Editar</td>" +
+            "<td><a href='javascript:deleteAula(" +
+            item.id +
+            ")'>Excluir</td></tr>"
+        );
+      });
+      $("#listaAulas").DataTable();
+    })
+    .finally(function() {
+      $("#preloader").css("display", "none");
     });
-    $("#listaAulas").DataTable();
-  });
 
   axios.get("http://localhost:8080/myapp/materias").then(function(res) {
     res.data.forEach(function(item) {
@@ -70,6 +76,7 @@ $(document).ready(function() {
 });
 
 function doEditAula(aula, id) {
+  $("#preloader").css("display", "block");
   axios
     .put("http://localhost:8080/myapp/aulas/aula/" + id, aula)
     .then(function(res) {
@@ -77,6 +84,7 @@ function doEditAula(aula, id) {
     })
     .finally(function() {
       location.reload();
+      $("#preloader").css("display", "none");
     });
 }
 
@@ -92,6 +100,7 @@ function editAula(id) {
 }
 
 function deleteAula(id) {
+  $("#preloader").css("display", "block");
   axios
     .delete("http://localhost:8080/myapp/aulas/aula/" + id)
     .then(function(res) {
@@ -99,10 +108,12 @@ function deleteAula(id) {
     })
     .finally(function() {
       location.reload();
+      $("#preloader").css("display", "none");
     });
 }
 
 function iniciarAula(id) {
+  $("#preloader").css("display", "block");
   axios
     .post("http://localhost:8080/myapp/aulas/aula/iniciarAula/" + id)
     .then(function(res) {
@@ -110,16 +121,19 @@ function iniciarAula(id) {
     })
     .finally(function() {
       location.reload();
+      $("#preloader").css("display", "none");
     });
 }
 
 function finalizarAula(id) {
+  $("#preloader").css("display", "block");
   axios
     .post("http://localhost:8080/myapp/aulas/aula/concluirAula/" + id)
     .then(function(res) {
       console.log(res);
     })
     .finally(function() {
+      $("#preloader").css("display", "none");
       location.reload();
     });
 }
