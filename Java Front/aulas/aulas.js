@@ -11,6 +11,14 @@ $(document).ready(function() {
           "<td>" +
           item.materia.descricao +
           "</td>" +
+          "<td><a href='javascript:iniciarAula(" +
+          item.id +
+          ")'>Iniciar Aula/</td>" +
+          "<td><a href='javascript:finalizarAula(" +
+          item.id +
+          ")'>Concluir Aula</td>" +
+          "" +
+          "</td>" +
           "<td><a href='javascript:editAula(" +
           item.id +
           ")'>Editar</td>" +
@@ -86,6 +94,28 @@ function editAula(id) {
 function deleteAula(id) {
   axios
     .delete("http://localhost:8080/myapp/aulas/aula/" + id)
+    .then(function(res) {
+      console.log(res);
+    })
+    .finally(function() {
+      location.reload();
+    });
+}
+
+function iniciarAula(id) {
+  axios
+    .post("http://localhost:8080/myapp/aulas/aula/iniciarAula/" + id)
+    .then(function(res) {
+      console.log(res);
+    })
+    .finally(function() {
+      location.reload();
+    });
+}
+
+function finalizarAula(id) {
+  axios
+    .post("http://localhost:8080/myapp/aulas/aula/concluirAula/" + id)
     .then(function(res) {
       console.log(res);
     })
