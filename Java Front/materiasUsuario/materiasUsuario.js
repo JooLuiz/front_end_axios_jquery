@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#preloader").css("display", "block");
   axios.get("http://localhost:8080/myapp/materiasUsuario").then(function(res) {
     res.data.forEach(function(item) {
       $("#listaMateriasUsuarioBody").append(
@@ -23,6 +24,9 @@ $(document).ready(function() {
       );
     });
     $("#listaMateriasUsuario").DataTable();
+  })
+  .finally(function(){
+    $("#preloader").css("display", "none");
   });
 
   axios.get("http://localhost:8080/myapp/materias").then(function(res) {
@@ -68,7 +72,7 @@ $(document).ready(function() {
       ano: ano,
       situacao: situacao,
       materia: { id: materiaId },
-      usuario: usuario
+      usuario: { id: usuario }
     };
     doEditMateriaUsuario(materiaUsuario, id);
   });

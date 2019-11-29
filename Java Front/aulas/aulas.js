@@ -69,7 +69,7 @@ $(document).ready(function() {
     var aula = {
       descricao: descricao,
       situacao: situacao,
-      materia: { id: parseInt(materiaId) }
+      materia: { id: materiaId }
     };
     doEditAula(aula, id);
   });

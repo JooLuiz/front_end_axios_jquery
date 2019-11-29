@@ -25,8 +25,8 @@ $(document).ready(function() {
     var materiaUsuario = {
       ano: ano,
       situacao: situacao,
-      materia: materia,
-      usuario: usuario
+      materia: { id: materia },
+      usuario: { id: usuario }
     };
     adicionaMateriaUsuario(materiaUsuario);
   });

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#preloader").css("display", "block");
   axios.get("http://localhost:8080/myapp/materias").then(function(res) {
     res.data.forEach(function(item) {
       $("#listaMateriasBody").append(
@@ -17,6 +18,9 @@ $(document).ready(function() {
       );
     });
     $("#listaMaterias").DataTable();
+  })
+  .finally(function(){
+    $("#preloader").css("display", "none");
   });
 
   var modal = document.getElementById("editMateriaModal");

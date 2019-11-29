@@ -53,11 +53,12 @@ $(document).ready(function() {
   $("#doEditConteudo").on("click", function() {
     let id = $("input[name=id]").val();
     let conteudoContent = $("input[name=conteudo]").val();
-    let aulaId = $("#aulaList").val();
+    let aulaId = $("#aulasList").val();
     var conteudo = {
       conteudo: conteudoContent,
-      aula: { id: parseInt(aulaId) }
+      aula: { id: aulaId }
     };
+    debugger
     doEditConteudo(conteudo, id);
   });
 });
@@ -67,6 +68,7 @@ function doEditConteudo(conteudo, id) {
   axios
     .put("http://localhost:8080/myapp/conteudos/conteudo/" + id, conteudo)
     .then(function(res) {
+      debugger
       console.log(res);
     })
     .finally(function() {

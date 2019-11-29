@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#preloader").css("display", "block");
   axios.get("http://localhost:8080/myapp/usuarios").then(function(res) {
     res.data.forEach(function(item) {
       $("#listaUsuariosBody").append(
@@ -23,6 +24,9 @@ $(document).ready(function() {
       );
     });
     $("#listaUsuarios").DataTable();
+  })
+  .finally(function(){
+    $("#preloader").css("display", "none");
   });
 
   var modal = document.getElementById("editUsuarioModal");

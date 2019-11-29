@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#preloader").css("display", "block");
   axios.get("http://localhost:8080/myapp/respostas").then(function(res) {
     res.data.forEach(function(item) {
       $("#listaRespostasBody").append(
@@ -20,6 +21,9 @@ $(document).ready(function() {
       );
     });
     $("#listaRespostas").DataTable();
+  })
+  .finally(function(){
+    $("#preloader").css("display", "block");
   });
 
   axios.get("http://localhost:8080/myapp/exercicios").then(function(res) {
@@ -51,11 +55,11 @@ $(document).ready(function() {
     let id = $("input[name=id]").val();
     let descricao = $("input[name=descricao]").val();
     let correta = $("input[name=correta]").val();
-    let exercicioId = $("#exercicioList").val();
+    let exercicioId = $("#exerciciosList").val();
     var resposta = {
       descricao,
       correta,
-      exercicio: { id: parseInt(exercicioId) }
+      exercicio: { id: exercicioId }
     };
     doEditResposta(resposta, id);
   });

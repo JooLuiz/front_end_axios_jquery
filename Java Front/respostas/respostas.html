@@ -1,103 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lufez Inc</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../../styles/form.css" />
-    <link rel="stylesheet" href="../../styles/modal.css" />
-    <link rel="stylesheet" href="../../styles/header.css" />
-    <link rel="stylesheet" href="../../styles/table.css" />
-    <link rel="stylesheet" href="../../styles/footer.css" />
-    <link
-      rel="stylesheet"
-      href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"
-    />
-  </head>
 
-  <body>
-    <div class="header-wrapper">
-      <h2 class="header"><a href="../main.html">Lufez Inc</a></h2>
-      <div class="header-button-group">
-        <a href="../main.html" class="btn-header">Voltar</a>
-        <a href="./adicionarResposta.html" class="btn-header">Adicionar</a>
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lufez Inc</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css" />
+  <link rel="stylesheet" href="../../styles/form.css" />
+  <link rel="stylesheet" href="../../styles/modal.css" />
+  <link rel="stylesheet" href="../../styles/header.css" />
+  <link rel="stylesheet" href="../../styles/table.css" />
+  <link rel="stylesheet" href="../../styles/footer.css" />
+  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+</head>
+
+<body>
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+  <div class="header-wrapper">
+    <h2 class="header"><a href="../main.html">Lufez Inc</a></h2>
+    <div class="header-button-group">
+      <a href="../main.html" class="btn-header">Voltar</a>
+      <a href="./adicionarResposta.html" class="btn-header">Adicionar</a>
     </div>
+  </div>
 
-    <div id="editRespostaModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2>Editar Conteúdo</h2>
-        </div>
-        <div class="modal-body form">
-          <form class="formEditar" id="editarResposta">
-            <div class="half-form">
-              <div class="form-groups">
-                <input type="text" name="descricao" placeholder="descricao" />
-              </div>
-              <div class="form-groups">
-                <input type="number" name="id" placeholder="id" hidden />
-              </div>
-              <div class="form-groups">
-                <select
-                  name="exerciciosList"
-                  id="exerciciosList"
-                  form="editarResposta"
-                >
-                </select>
-              </div>
+  <div id="editRespostaModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Editar Conteúdo</h2>
+      </div>
+      <div class="modal-body form">
+        <form class="formEditar" id="editarResposta">
+          <div class="half-form">
+            <div class="form-groups">
+              <input type="text" name="descricao" placeholder="descricao" />
             </div>
-            <div class="half-form">
-              <div class="form-groups">
-                <input type="text" name="correta" placeholder="correta" />
-              </div>
-              <div class="form-groups">
-                <button class="doEdit" id="doEditResposta">Editar</button>
-              </div>
+            <div class="form-groups">
+              <input type="number" name="id" placeholder="id" hidden />
             </div>
-          </form>
-        </div>
+            <div class="form-groups">
+              <select name="exerciciosList" id="exerciciosList" form="editarResposta">
+              </select>
+            </div>
+          </div>
+          <div class="half-form">
+            <div class="form-groups">
+              <input type="text" name="correta" placeholder="correta" />
+            </div>
+            <div class="form-groups">
+              <h3 class="doEdit" id="doEditResposta">Editar</h3>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
 
-    <div class="table-wrapper">
-      <table id="listaRespostas">
-        <thead id="listaRespostasHeader">
-          <th>Descricao</th>
-          <th>Correta</th>
-          <th>Exercicio</th>
-          <th></th>
-          <th></th>
-        </thead>
-        <tbody id="listaRespostasBody"></tbody>
-      </table>
+  <div class="table-wrapper">
+    <table id="listaRespostas">
+      <thead id="listaRespostasHeader">
+        <th>Descricao</th>
+        <th>Correta</th>
+        <th>Exercicio</th>
+        <th></th>
+        <th></th>
+      </thead>
+      <tbody id="listaRespostasBody"></tbody>
+    </table>
+  </div>
+
+  <div class="footer-wrapper footer-wrapper-main">
+    <div class="footer-info-group">
+      <ul class="footer-list">
+        <li>Copyright © 2019 Lufez Inc. Todos os direitos reservados</li>
+        <li>|</li>
+        <li>São Paulo - (11) 9898 - 9800</li>
+      </ul>
     </div>
+  </div>
 
-    <div class="footer-wrapper footer-wrapper-main">
-      <div class="footer-info-group">
-        <ul class="footer-list">
-          <li>Copyright © 2019 Lufez Inc. Todos os direitos reservados</li>
-          <li>|</li>
-          <li>São Paulo - (11) 9898 - 9800</li>
-        </ul>
-      </div>
-    </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script src="respostas.js"></script>
+</body>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/browse/axios@0.19.0/dist/axios.min.map"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="respostas.js"></script>
-  </body>
 </html>

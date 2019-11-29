@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#preloader").css("display", "block");
   axios.get("http://localhost:8080/myapp/exercicios").then(function(res) {
     res.data.forEach(function(item) {
       $("#listaExerciciosBody").append(
@@ -20,6 +21,9 @@ $(document).ready(function() {
       );
     });
     $("#listaExercicios").DataTable();
+  })
+  .finally(function(){
+    $("#preloader").css("display", "none");
   });
 
   axios.get("http://localhost:8080/myapp/conteudos").then(function(res) {
@@ -51,11 +55,11 @@ $(document).ready(function() {
     let id = $("input[name=id]").val();
     let pergunta = $("input[name=pergunta]").val();
     let dificuldade = $("input[name=dificuldade]").val();
-    let conteudoId = $("#conteudoList").val();
+    let conteudoId = $("#conteudosList").val();
     var exercicio = {
       pergunta,
       dificuldade,
-      conteudo: { id: parseInt(conteudoId) }
+      conteudo: { id: conteudoId }
     };
     doEditExercicio(exercicio, id);
   });

@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var myChart = document.getElementById("myChart").getContext("2d");
-
+  $("#preloader").css("display", "block");
   axios.get("http://localhost:8080/myapp/materias").then(function(resp) {
     var labels = ["Ativas", "Inativas"];
     var dados = [0, 0];
@@ -56,6 +56,9 @@ $(document).ready(function() {
         }
       }
     });
+  })
+  .finally(function(){
+    $("#preloader").css("display", "none");
   });
 
   var myChart2 = document.getElementById("myChart2").getContext("2d");
@@ -116,7 +119,10 @@ $(document).ready(function() {
         }
       }
     });
-  });
+  })
+  .finally(function(){
+    $("#preloader").css("display", "none");
+  });;
 
   // Activate Carousel
   $("#carouselIndex").carousel({
